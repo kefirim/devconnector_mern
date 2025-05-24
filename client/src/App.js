@@ -14,6 +14,8 @@ import setAuthToken from './utils/setAuthToken';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/routing/PrivateRoute';
 import ProfileForm from './profile-forms/ProfileForm';
+import AddExperience from './profile-forms/AddExperience';
+import AddEducation from './profile-forms/AddEducation';
 //import PrivateRoute from './components/routing/PrivateRoute';
 
 
@@ -49,6 +51,13 @@ function App() {
           <Route path="/edit-profile" element={<PrivateRoute />}>
             <Route index element={<ProfileForm />} />
           </Route>
+          <Route path="/add-experience" element={<PrivateRoute />}>
+            <Route index element={<AddExperience />} />
+          </Route>
+          <Route path="/add-education" element={<PrivateRoute />}>
+            <Route index element={<AddEducation />} />
+          </Route>
+
 
           
           
