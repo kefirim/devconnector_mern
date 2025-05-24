@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build files
+client/build/
+
+# Lint cache
+client/.eslintcache
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env files & config
+.env
+.env.local
+config/production.json
+config/default.json
+
+# IDE/editor stuff
+.vscode/
+.idea/
+.DS_Store
