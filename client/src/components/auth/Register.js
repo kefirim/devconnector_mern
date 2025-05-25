@@ -4,11 +4,12 @@ import { setAlert } from '../../action/alertAction';
 import { registerUser  } from '../../action/authAction';
 
 
-import { Link } from 'react-router-dom';
-
+import { Link,useNavigate } from 'react-router-dom';
+//useNavigate 
 
 const Register = () => {
   const dispatch = useDispatch();
+  const navigate=useNavigate()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,7 +28,10 @@ const Register = () => {
        dispatch(setAlert('Passwords do not match', 'danger'));
     } else {
       dispatch(registerUser({ name, email, password }))
+    
+
     }
+     navigate('/dashboard')
   };
 
   return (

@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import DashboardActions from './DashboardActions';
+import Experience from './Experience';
+import Education from './Education';
 import Spinner from '../layout/Spinner';
-import { getCurrentProfile } from '../../action/profileAction';
+import { getCurrentProfile, deleteAccount } from '../../action/profileAction';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -29,6 +31,13 @@ const Dashboard = () => {
       {profile !== null ? (
         <>
           <DashboardActions />
+           <Experience experience={profile.experience} />
+           <Education education={profile.education} />
+            <div className="my-2">
+            <button className="btn btn-danger" onClick={() => dispatch(deleteAccount())}>
+              <i className="fas fa-user-minus" /> Delete My Account
+            </button>
+          </div>
         </>
       ) : (
         <>

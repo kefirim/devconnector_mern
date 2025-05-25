@@ -21,6 +21,9 @@ const Navbar = () => {
           <span className="hide-sm">Dashboard</span>
         </Link>
       </li>
+      <li>
+        <Link to="/profiles">Developers</Link>
+      </li>
 
       <li>
         <a
