@@ -18,6 +18,8 @@ import AddExperience from './profile-forms/AddExperience';
 import AddEducation from './profile-forms/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 //import PrivateRoute from './components/routing/PrivateRoute';
 
 
@@ -61,6 +63,12 @@ function App() {
             <Route index element={<AddExperience />} />
           </Route>
           <Route path="/add-education" element={<PrivateRoute />}>
+            <Route index element={<AddEducation />} />
+          </Route>
+          <Route path="/posts" element={<Posts />}>
+            <Route index element={<AddEducation />} />
+          </Route>
+          <Route path="/posts/:id" element={<Post />}>
             <Route index element={<AddEducation />} />
           </Route>
 

@@ -86,20 +86,21 @@ router.delete('/:id', auth, async (req, res) => {
       return res.status(404).json({ msg: 'Post not found' });
     }
 
-    // Check user
+    // Vérifie que l'utilisateur est bien le propriétaire du post
     if (post.user.toString() !== req.user.id) {
       return res.status(401).json({ msg: 'User not authorized' });
     }
 
-    await post.remove();
+    // Supprime le post directement par son id
+    await Post.findByIdAndDelete(req.params.id);
 
     res.json({ msg: 'Post removed' });
   } catch (err) {
     console.error(err.message);
-
     res.status(500).send('Server Error');
   }
 });
+
 
 // @route    PUT api/posts/like/:id
 // @desc     Like a post

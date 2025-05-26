@@ -5,6 +5,9 @@ import { composeWithDevTools } from '@redux-devtools/extension'
 import alertReducer from './reducers/alertReducer'
 import authReducer from './reducers/authReducer'
 import profileReducer from './reducers/profileReducer'
+import postReducer from './reducers/postReducer'
+
+//postReducer
 
 
 //import { cartReducer } from './reducers/cartReducers'
@@ -13,7 +16,8 @@ import profileReducer from './reducers/profileReducer'
 const reducer = combineReducers({
     alert:alertReducer,
     auth:authReducer,
-    profile:profileReducer
+    profile:profileReducer,
+    post:postReducer
    
    
 })
